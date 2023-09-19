@@ -41,9 +41,14 @@ nav li{
     list-style-type: none;
 }
 
+nav ul li a{
+    display: inline;
+    list-style-type: none;
+}
+
 nav a.icon {
     background: #20b2aa;
-    display: block;
+    display: none;
     position: absolute;
     right: 20px;
     top: 15px;
@@ -52,7 +57,7 @@ nav a.icon {
 nav a:hover {
     font-weight: bold;
 }
-  
+
 #drop-down {
     background-color: #0b857f;
     color: white;
@@ -60,7 +65,7 @@ nav a:hover {
 
 main {
     padding: 20px;
-    overflow: auto;
+    display: flex;
 }
 
 h2,
@@ -83,8 +88,6 @@ h5 {
 }
 
 #content {
-    float: right;
-    width: 75%;
 }
 
 #home {
@@ -95,6 +98,10 @@ h5 {
     border-radius: 10px;
 }
 
+#home p {
+    text-align: justify;
+}
+
 .card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
@@ -102,28 +109,35 @@ h5 {
     margin-top: 20px;
 }
 
+#information{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+
 #info-card{
-    float: left;
-    width: 25%;
-    padding-left: 5px;
-    padding-right: 5px;
+    display: flex;
+    flex-direction: row;
 }
 
-#kategori-satu{
-    float: left;
-    width: 50%;
-    padding-right: 10px;
+#info-card p{
+    text-align: center;
 }
 
-#kategori-dua{
-    float: right;
-    width: 50%;
-    padding-left: 10px;
+#kategori{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+#kategori p {
+    text-align: justify;
 }
 
 .kategori-image {
     width: 100%;
-    height: 200px;
     object-fit: cover;
     object-position: center;
 }
@@ -141,9 +155,12 @@ h5 {
 }
 
 aside {
-    float: left;
-    width: 25%;
-    padding-right: 20px;
+    padding-left: 20px;
+    flex-shrink: 2;
+}
+
+blockquote p {
+    text-align: justify;
 }
 
 header {
@@ -157,22 +174,88 @@ footer {
     text-align: center;
     font-weight: bold;
 }
-.rata {
-    text-align: left;
-}
 
-@media screen and (max-width: 1000px) {
+/* Tampilan Ponsel (Mobile) */
+@media (max-width: 480px) {
+    /* CSS untuk tampilan ponsel */
+    body{
+        width: 100%
+    }
 
-    #content,
-    aside,
-    #info-card,
-    #kategori-satu,
-    #kategori-dua {
+    main, #information{
         width: 100%;
-        padding: 0;
+        display: flex;
+        flex-direction: column;
     }
 
-    .featured-image {
-        height: 280px;
+    aside{
+        padding-left: 0px;
+    }
+
+    .large{
+        display: none;
+    }
+
+    nav a.icon {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 7px;
+    }
+
+    #drop-down li a{
+        display: block;
     }
 }
+
+/* Tampilan Tablet */
+@media (min-width: 481px) and (max-width: 1024px) {
+    /* CSS untuk tampilan tablet */
+    body{
+        width: 100%
+    }
+
+    main, #information{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    aside{
+        padding-left: 0px;
+    }
+
+    .large{
+        display: none;
+    }
+
+    nav a.icon {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 7px;
+    }
+
+    #drop-down li a{
+        display: block;
+    }   
+}
+
+/* Tampilan Desktop Kecil (Small Desktop) */
+@media (min-width: 1025px) and (max-width: 1280px) {
+    /* CSS untuk tampilan desktop kecil atau laptop */
+}
+
+/* Tampilan Desktop Menengah (Medium Desktop) */
+@media (min-width: 1281px) and (max-width: 1440px) {
+    /* CSS untuk tampilan desktop menengah */
+}
+
+/* Tampilan Desktop Besar (Large Desktop) */
+@media (min-width: 1441px) {
+    /* CSS untuk tampilan desktop besar */
+    aside{
+        flex-shrink: 1;
+    }
+}
+
